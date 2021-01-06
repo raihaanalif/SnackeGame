@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Food
+comment0.text=\r\n\r\n\ @author\ Muhajir\r\n
+comment1.params=
+comment1.target=Food()
+comment2.params=g
+comment2.target=void\ render(java.awt.Graphics)
+comment3.params=
+comment3.target=Location\ getLocation()
+comment4.params=location
+comment4.target=void\ setLocation(Location)
+comment5.params=
+comment5.target=void\ move()
+numComments=6
