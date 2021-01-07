@@ -135,17 +135,17 @@ public class GamePlay implements ActionListener, KeyListener {
 
     public void keyPressed(KeyEvent ke) {
         if (this.gamestat == 0) {
-            if (ke.getKeyCode() == 32) {
+            if (ke.getKeyCode() == 32) { //ASCI spasi
                 this.gamestart();
                 this.gamestat = 1;
             }
 
-            if (ke.getKeyCode() == 39) {
+            if (ke.getKeyCode() == 39) { //ASCI right
                 ++this.dificulty;
                 if (this.dificulty > 3) {
                     this.dificulty = 1;
                 }
-            } else if (ke.getKeyCode() == 37) {
+            } else if (ke.getKeyCode() == 37) { //ASCII left
                 --this.dificulty;
                 if (this.dificulty < 1) {
                     this.dificulty = 3;
