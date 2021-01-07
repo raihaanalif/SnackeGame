@@ -27,7 +27,7 @@ public class Snake {
         for(int i = 0; i < 3; ++i) {
             this.snakeloc.add(new Location(100 - 25 * i, 50));
         }
-
+        //untuk memberi gambar badan sama kepala ular
         this.headimage = new ImageIcon("snakehead.png");
         this.bodyimage = new ImageIcon("snakebody.png");
     }
@@ -149,6 +149,10 @@ public class Snake {
         for(i = 1; i < this.lengthOfSnake; ++i) {
             if (((Location)this.snakeloc.get(0)).getX() == ((Location)this.snakeloc.get(i)).getX() && ((Location)this.snakeloc.get(0)).getY() == ((Location)this.snakeloc.get(i)).getY()) {
                 return false;
+            }
+            //jika panjang ular lebih dari 20 maka warna badan akan berganti
+            if(this.lengthOfSnake >= 20){
+                this.bodyimage = new ImageIcon("snakebodyGrow.png");
             }
         }
 
