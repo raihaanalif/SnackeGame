@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import java.util.Random;
 
 public class Food {
-    private Location location;
+    private Location location; 
     private Random random = new Random();
 
     public Food() {
