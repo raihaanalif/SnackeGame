@@ -89,7 +89,7 @@ public class GamePlay implements ActionListener, KeyListener {
                     g.drawString("MEDIUM", 535, 125);
                     break;
                 case 3:
-                    g.drawString("HARD", 550, 125);
+                    g.drawString("HARD", 545, 125);
             }
 
             g.drawString("Score: " + this.score, 530, 200);
@@ -98,6 +98,7 @@ public class GamePlay implements ActionListener, KeyListener {
                 g.drawString("SPACE to Pause", 500, 275);
             } else if (this.gamestat == 3) {
                 g.drawString("SPACE to Continue", 490, 275);
+                g.drawString("ESC to Menu", 515, 300);
             }
 
             this.snake.render(g, this.renderer);
@@ -184,7 +185,6 @@ public class GamePlay implements ActionListener, KeyListener {
                             this.move = 2;
                         }
                 }
-
                 this.canmove = false;
             }
         } else if (this.gamestat == 2) {
@@ -196,12 +196,12 @@ public class GamePlay implements ActionListener, KeyListener {
             }
 
             this.renderer.repaint();
-        } else if (this.gamestat == 3 && ke.getKeyCode() == 32) {
+        } else if(this.gamestat == 3 && ke.getKeyCode() == 32) {
             this.gamestat = 1;
+        } else if(this.gamestat == 3 && ke.getKeyCode() == 27){
+            this.gamestat = 0;
         }
-
     }
-
     public void keyReleased(KeyEvent ke) {
     }
 }
