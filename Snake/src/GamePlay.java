@@ -45,7 +45,8 @@ public class GamePlay implements ActionListener, KeyListener {
         this.random = new Random();
         this.gamestat = 0;
         this.dificulty = 1;
-        this.title = new ImageIcon("title.png");
+        java.net.URL titleresource = getClass().getResource("title.png");
+        this.title = new ImageIcon(titleresource);
     }
 
     public void gamestart() {
