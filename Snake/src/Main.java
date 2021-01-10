@@ -1,7 +1,9 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
+/**
+ * Kelas main dari program
+ *
+ * @author (Arvel Gavrilla R. , Raihan Alifianto)
+ * @version (10 - 1 - 2021)
+ */
 
 import javax.swing.JFrame;
 
