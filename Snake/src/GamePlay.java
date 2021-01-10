@@ -98,7 +98,7 @@ public class GamePlay implements ActionListener, KeyListener {
                 g.drawString("SPACE to Pause", 500, 275);
             } else if (this.gamestat == 3) {
                 g.drawString("SPACE to Continue", 490, 275);
-                g.drawString("ESC to Menu", 515, 300);
+                g.drawString("ESC to Exit", 515, 300);
             }
 
             this.snake.render(g, this.renderer);
@@ -199,7 +199,9 @@ public class GamePlay implements ActionListener, KeyListener {
         } else if(this.gamestat == 3 && ke.getKeyCode() == 32) {
             this.gamestat = 1;
         } else if(this.gamestat == 3 && ke.getKeyCode() == 27){
-            this.gamestat = 0;
+//            this.gamestat = 0;
+//            this.dificulty = 1;
+            System.exit(0);
         }
     }
     public void keyReleased(KeyEvent ke) {
