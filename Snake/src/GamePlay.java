@@ -1,7 +1,9 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
+/**
+ * Mengatur gameplay dari game
+ *
+ * @author (Arvel Gavrilla R. , Raihan Alifianto)
+ * @version (10 - 1 - 2021)
+ */
 
 import java.awt.Color;
 import java.awt.Font;
