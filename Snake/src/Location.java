@@ -1,7 +1,9 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
+/**
+ * Mengatur koordinat di dalam game
+ *
+ * @author (Arvel Gavrilla R. , Raihan Alifianto)
+ * @version (10 - 1 - 2021)
+ */
 
 public class Location {
     private int x; //inisiasi variabel x
