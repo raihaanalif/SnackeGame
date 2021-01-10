@@ -2,7 +2,7 @@
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
 //
-
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -27,15 +27,16 @@ public class Snake {
         for(int i = 0; i < 3; ++i) {
             this.snakeloc.add(new Location(100 - 25 * i, 50));
         }
-        //untuk memberi gambar badan sama kepala ular
-        this.headimage = new ImageIcon("snakehead.png");
-        this.bodyimage = new ImageIcon("snakebody.png");
+
+        java.net.URL headresource = getClass().getResource("snakehead.png");
+        this.headimage = new ImageIcon(headresource);
+        java.net.URL bodyresource = getClass().getResource("snakebody.png");
+        this.bodyimage = new ImageIcon(bodyresource);
     }
 
     public ArrayList<Location> getSnakeloc() {
         return this.snakeloc;
     }
-
     public void setLoc(int i, Location loc) {
         this.snakeloc.set(i, loc);
     }
@@ -49,7 +50,6 @@ public class Snake {
     public ImageIcon getHeadimage() {
         return this.headimage;
     }
-
     public ImageIcon getBodyimage() {
         return this.bodyimage;
     }
@@ -68,7 +68,10 @@ public class Snake {
     }
 
     public boolean eat(Food food) {
-        return ((Location)this.snakeloc.get(0)).getX() == food.getLocation().getX() && ((Location)this.snakeloc.get(0)).getY() == food.getLocation().getY();
+
+        return ((Location)this.snakeloc.get(0)).getX() == food.getLocation().getX() &&
+                ((Location)this.snakeloc.get(0)).getY() == food.getLocation().getY();
+
     }
 
     public boolean move(int move) {
@@ -147,12 +150,13 @@ public class Snake {
         }
 
         for(i = 1; i < this.lengthOfSnake; ++i) {
-            if (((Location)this.snakeloc.get(0)).getX() == ((Location)this.snakeloc.get(i)).getX() && ((Location)this.snakeloc.get(0)).getY() == ((Location)this.snakeloc.get(i)).getY()) {
+            if (((Location)this.snakeloc.get(0)).getX() == ((Location)this.snakeloc.get(i)).getX() &&
+                    ((Location)this.snakeloc.get(0)).getY() == ((Location)this.snakeloc.get(i)).getY()) {
                 return false;
             }
-            //jika panjang ular lebih dari 20 maka warna badan akan berganti
             if(this.lengthOfSnake >= 20){
-                this.bodyimage = new ImageIcon("snakebodyGrow.png");
+                java.net.URL bodyresource = getClass().getResource("snakebodyGrow.png");
+                this.bodyimage = new ImageIcon(bodyresource);
             }
         }
 
