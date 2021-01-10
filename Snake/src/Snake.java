@@ -27,20 +27,20 @@ public class Snake {
         for(int i = 0; i < 3; ++i) {
             this.snakeloc.add(new Location(100 - 25 * i, 50));
         }
-
+        //mendapatkan tampilan dari ular mulai dari kepala hingga badannya
         java.net.URL headresource = getClass().getResource("snakehead.png");
         this.headimage = new ImageIcon(headresource);
         java.net.URL bodyresource = getClass().getResource("snakebody.png");
         this.bodyimage = new ImageIcon(bodyresource);
     }
-
+    //mendapatkan lokasi dari ularnya
     public ArrayList<Location> getSnakeloc() {
         return this.snakeloc;
     }
     public void setLoc(int i, Location loc) {
         this.snakeloc.set(i, loc);
     }
-
+    //mengatur pertambahan panjang dari ularnya
     public void grow() {
         int x = ((Location)this.snakeloc.get(this.snakeloc.size() - 1)).getX();
         int y = ((Location)this.snakeloc.get(this.snakeloc.size() - 1)).getY();
@@ -66,14 +66,14 @@ public class Snake {
         }
 
     }
-
+    //mengatur bila koordinat makanan dan ular sama maka didefinisikan ular sedang memakan makanannya
     public boolean eat(Food food) {
 
         return ((Location)this.snakeloc.get(0)).getX() == food.getLocation().getX() &&
                 ((Location)this.snakeloc.get(0)).getY() == food.getLocation().getY();
 
     }
-
+    //mendefinisikan pergerakan ular
     public boolean move(int move) {
         int i;
         this.lengthOfSnake = this.snakeloc.size();
@@ -148,12 +148,13 @@ public class Snake {
                     }
                 }
         }
-
+        
         for(i = 1; i < this.lengthOfSnake; ++i) {
             if (((Location)this.snakeloc.get(0)).getX() == ((Location)this.snakeloc.get(i)).getX() &&
                     ((Location)this.snakeloc.get(0)).getY() == ((Location)this.snakeloc.get(i)).getY()) {
                 return false;
             }
+            //bila panjangnya sudah melebihi 20 maka ular akan berganti warna
             if(this.lengthOfSnake >= 20){
                 java.net.URL bodyresource = getClass().getResource("snakebodyGrow.png");
                 this.bodyimage = new ImageIcon(bodyresource);
