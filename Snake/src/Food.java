@@ -21,6 +21,7 @@ public class Food {
         g.setColor(Color.WHITE);
         g.fillOval(this.location.getX(), this.location.getY(), 25, 25);
         Graphics2D g2 = (Graphics2D) g;
+        //warna makanan akan otomatis berganti warna merah, biru dan magenta agar lebih menarik
         if(foodColor==0) {
             g2.setColor(Color.RED);
             foodColor++;
