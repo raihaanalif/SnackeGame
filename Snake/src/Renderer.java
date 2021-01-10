@@ -12,7 +12,7 @@ public class Renderer extends JPanel {
     GamePlay gameplay = new GamePlay(this);
 
     public Renderer() {
-        this.addKeyListener(this.gameplay);
+        this.addKeyListener(this.gameplay);//mengatur interface agar sesuai dengan keyboard
         this.setFocusable(true);
         this.setFocusTraversalKeysEnabled(false);
     }
